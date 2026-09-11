@@ -49,8 +49,8 @@ const variants: Variants = {
 };
 
   return (
-        <div className="min-h-screen flex flex-col bg-[#1C0C5B] text-[#f8f6fc] selection:bg-[#916BBF]/40 
-        selection:text-[#C996CC] relative">
+        <div className="min-h-screen flex flex-col bg-[#092328] text-[#f8f6fc] selection:bg-[#2A835F]
+        /40 selection:text-[#8BBB92] relative">
       {/* Global Fixed Header */}
       <Header currentScreen={currentScreen} navigateTo={navigateTo} />
 

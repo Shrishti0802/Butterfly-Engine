@@ -8,41 +8,57 @@
 @tailwind components;
 @tailwind utilities;
 
-@theme {
-  --color-surface: #1C0C5B;
-  --color-surface-dim: #150849;
-  --color-surface-bright: #3D2C8D;
-  --color-surface-container-lowest: #120640;
-  --color-surface-container-low: #1c0c5b;
-  --color-surface-container: #24146a;
-  --color-surface-container-high: #2f1b82;
-  --color-surface-container-highest: #3D2C8D;
-  --color-surface-variant: #3D2C8D;
+@theme {  /* Background layers */
+  --color-surface: #092328;
+  --color-surface-dim: #061a1f;
+  --color-surface-bright: #12544F;
+  --color-surface-container-lowest: #041317;
+  --color-surface-container-low: #092328;
+  --color-surface-container: #0e3d3c;
+  --color-surface-container-high: #12544F;
+  --color-surface-container-highest: #2A835F;
+  --color-surface-variant: #12544F;
+
+  /* Text on surfaces */
   --color-on-surface: #f8f6fc;
-  --color-on-surface-variant: #cbbbe4;
+  --color-on-surface-variant: #8BBB92;
+
+  /* Inverse (rarely used) */
   --color-inverse-surface: #f8f6fc;
-  --color-inverse-on-surface: #1C0C5B;
-  --color-outline: #916BBF;
-  --color-outline-variant: #3D2C8D;
-  --color-surface-tint: #C996CC;
-  --color-primary: #C996CC;
-  --color-on-primary: #1C0C5B;
-  --color-primary-container: #916BBF;
+  --color-inverse-on-surface: #092328;
+
+  /* Borders and outlines */
+  --color-outline: #2A835F;
+  --color-outline-variant: #12544F;
+  --color-surface-tint: #8BBB92;
+
+  /* Primary accent (buttons, links, highlights) */
+  --color-primary: #2A835F;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #12544F;
   --color-on-primary-container: #ffffff;
-  --color-inverse-primary: #916BBF;
-  --color-secondary: #916BBF;
-  --color-on-secondary: #ffffff;
-  --color-secondary-container: #3D2C8D;
+  --color-inverse-primary: #8BBB92;
+
+  /* Secondary accent */
+  --color-secondary: #8BBB92;
+  --color-on-secondary: #092328;
+  --color-secondary-container: #12544F;
   --color-on-secondary-container: #f8f6fc;
-  --color-tertiary: #cbbbe4;
-  --color-on-tertiary: #1C0C5B;
-  --color-tertiary-container: #3D2C8D;
+
+  /* Tertiary accent (soft highlights) */
+  --color-tertiary: #8BBB92;
+  --color-on-tertiary: #092328;
+  --color-tertiary-container: #12544F;
   --color-on-tertiary-container: #f8f6fc;
+
+  /* Error states (keep red) */
   --color-error: #f87171;
   --color-on-error: #450a0a;
   --color-error-container: #7f1d1d;
   --color-on-error-container: #fef2f2;
-  --color-background: #1C0C5B;
+
+  /* Main background */
+  --color-background: #092328;
   --color-on-background: #f8f6fc;
 
   --font-body-lg: Inter, sans-serif;

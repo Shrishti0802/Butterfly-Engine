@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { NavigationProps } from '../types';
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
   const [kFactor, setKFactor] = useState(1.6);
@@ -66,19 +67,19 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
   return (
     <div className="flex flex-col w-full pb-12">
       {/* Top Banner */}
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 px-5 py-2.5 mb-6 rounded-lg bg-[#24146a] border border-[#3D2C8D]">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 px-5 py-2.5 mb-6 rounded-lg bg-[#0e3d3c] border border-[#12544F]">
         <div className="flex items-center gap-2.5">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#C996CC]"></span>
-          <span className="font-mono text-xs text-[#C996CC] uppercase tracking-wider">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#8BBB92]"></span>
+          <span className="font-mono text-xs text-[#8BBB92] uppercase tracking-wider">
             Trajectory Protocol Active <span className="text-[#67548c] mx-1.5">/</span> Growth Simulation
           </span>
         </div>
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#1C0C5B] border border-[#3D2C8D]">
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#092328] border border-[#12544F]">
             <span className="font-mono text-xs text-[#9d8bb8] uppercase">VIRAL COEFFICIENT</span>
-            <span className="font-mono text-xs text-[#C996CC] font-semibold">k={kFactor.toFixed(1)}</span>
+            <span className="font-mono text-xs text-[#8BBB92] font-semibold">k={kFactor.toFixed(1)}</span>
           </div>
-          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#1C0C5B] border border-[#3D2C8D]">
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#092328] border border-[#12544F]">
             <span className="font-mono text-xs text-[#9d8bb8] uppercase">CONFIDENCE</span>
             <span className="font-mono text-xs text-[#f8f6fc] font-semibold">94.8%</span>
           </div>
@@ -88,7 +89,7 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
       {/* Header Intro Section */}
       <div className="flex flex-col gap-2 mb-8">
         <div className="inline-flex items-center gap-2">
-          <span className="font-mono text-xs tracking-wider uppercase font-semibold text-[#C996CC] px-2.5 py-0.5 rounded-md bg-[#916BBF]/20 border border-[#916BBF]/50">
+          <span className="font-mono text-xs tracking-wider uppercase font-semibold text-[#8BBB92] px-2.5 py-0.5 rounded-md bg-[#2A835F]/20 border border-[#2A835F]/50">
             The Butterfly Effect
           </span>
           <span className="font-mono text-xs text-[#9d8bb8] tracking-wider uppercase">
@@ -97,34 +98,33 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
         </div>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-[#f8f6fc] tracking-tight">
-              How Five Becomes Three Hundred
-            </h1>
-            <p className="text-sm text-[#cbbbe4] mt-1">
+            <TextGenerateEffect
+              words="How Five Becomes Three Hundred"
+              className="text-3xl font-bold text-[#f8f6fc] tracking-tight"
+            />
+            <p className="text-sm text-[#8BBB92] mt-1">
               A simulation of dynamic community growth once the first rides begin across target mobility corridors.
             </p>
           </div>
 
           {/* Scenario Toggle */}
-          <div className="flex items-center gap-1 p-1 rounded-lg bg-[#24146a] border border-[#3D2C8D]">
+          <div className="flex items-center gap-1 p-1 rounded-lg bg-[#0e3d3c] border border-[#12544F]">
             <button
               className={`px-3 py-1 rounded-md font-mono text-xs transition-colors cursor-pointer ${
                 kFactor === 1.2
-                  ? 'bg-[#C996CC] text-[#1C0C5B] font-bold'
-                  : 'text-[#cbbbe4] hover:text-white hover:bg-[#3D2C8D]/40'
+                  ? 'bg-[#8BBB92] text-[#092328] font-bold'
+                  : 'text-[#8BBB92] hover:text-white hover:bg-[#12544F]/40'
               }`}
               id="btn-conservative"
-              onClick={() => {
-                setKFactor(1.2);
-              }}
+              onClick={() => setKFactor(1.2)}
             >
               Conservative (k=1.2)
             </button>
             <button
               className={`px-3 py-1 rounded-md font-mono text-xs transition-colors cursor-pointer ${
                 kFactor === 1.6
-                  ? 'bg-[#C996CC] text-[#1C0C5B] font-bold'
-                  : 'text-[#cbbbe4] hover:text-white hover:bg-[#3D2C8D]/40'
+                  ? 'bg-[#8BBB92] text-[#092328] font-bold'
+                  : 'text-[#8BBB92] hover:text-white hover:bg-[#12544F]/40'
               }`}
               id="btn-baseline"
               onClick={() => {
@@ -138,13 +138,11 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
             <button
               className={`px-3 py-1 rounded-md font-mono text-xs transition-colors cursor-pointer ${
                 kFactor === 2.1
-                  ? 'bg-[#C996CC] text-[#1C0C5B] font-bold'
-                  : 'text-[#cbbbe4] hover:text-white hover:bg-[#3D2C8D]/40'
+                  ? 'bg-[#8BBB92] text-[#092328] font-bold'
+                  : 'text-[#8BBB92] hover:text-white hover:bg-[#12544F]/40'
               }`}
               id="btn-accelerated"
-              onClick={() => {
-                setKFactor(2.1);
-              }}
+              onClick={() => setKFactor(2.1)}
             >
               Viral (k=2.1)
             </button>
@@ -157,16 +155,16 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
         {/* LEFT COLUMN (30% / 3 cols) */}
         <div className="lg:col-span-3 flex flex-col gap-6">
           {/* Parameter Panel */}
-          <div className="relative rounded-xl bg-[#24146a]/90 border border-[#3D2C8D] p-6 flex flex-col gap-6">
+          <div className="relative rounded-xl bg-[#0e3d3c]/90 border border-[#12544F] p-6 flex flex-col gap-6">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[#C996CC] text-[18px]">tune</span>
-                <span className="font-mono text-xs uppercase tracking-wider text-[#cbbbe4] font-semibold">
+                <span className="material-symbols-outlined text-[#8BBB92] text-[18px]">tune</span>
+                <span className="font-mono text-xs uppercase tracking-wider text-[#8BBB92] font-semibold">
                   Parameters
                 </span>
               </div>
               <button
-                className="font-mono text-xs text-[#C996CC] hover:text-[#d8aedd] transition-colors flex items-center gap-1 cursor-pointer"
+                className="font-mono text-xs text-[#8BBB92] hover:text-[#f8f6fc] transition-colors flex items-center gap-1 cursor-pointer"
                 id="reset-params"
                 onClick={handleReset}
               >
@@ -183,13 +181,13 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
                     (viral coeff.)
                   </span>
                 </label>
-                <span className="text-xl font-bold font-mono text-[#C996CC]" id="val-k">
+                <span className="text-xl font-bold font-mono text-[#8BBB92]" id="val-k">
                   {kFactor.toFixed(1)}
                 </span>
               </div>
               <div className="relative flex items-center h-4">
                 <input
-                  className="w-full h-1.5 bg-[#1C0C5B] rounded-full appearance-none cursor-pointer accent-[#C996CC] transition-all"
+                  className="w-full h-1.5 bg-[#092328] rounded-full appearance-none cursor-pointer accent-[#8BBB92] transition-all"
                   id="slider-k"
                   max="2.4"
                   min="1.0"
@@ -219,7 +217,7 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
               </div>
               <div className="relative flex items-center h-4">
                 <input
-                  className="w-full h-1.5 bg-[#1C0C5B] rounded-full appearance-none cursor-pointer accent-[#C996CC] transition-all"
+                  className="w-full h-1.5 bg-[#092328] rounded-full appearance-none cursor-pointer accent-[#8BBB92] transition-all"
                   id="slider-weeks"
                   max="16"
                   min="4"
@@ -249,7 +247,7 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
               </div>
               <div className="relative flex items-center h-4">
                 <input
-                  className="w-full h-1.5 bg-[#1C0C5B] rounded-full appearance-none cursor-pointer accent-[#C996CC] transition-all"
+                  className="w-full h-1.5 bg-[#092328] rounded-full appearance-none cursor-pointer accent-[#8BBB92] transition-all"
                   id="slider-seed"
                   max="25"
                   min="1"
@@ -267,17 +265,17 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
             </div>
 
             {/* Divider */}
-            <div className="w-full h-px bg-[#3D2C8D]"></div>
+            <div className="w-full h-px bg-[#12544F]"></div>
 
             {/* Mathematical Model Sub-section */}
             <div className="flex flex-col gap-2.5">
               <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[#916BBF] text-[16px]">functions</span>
-                <span className="font-mono text-xs tracking-wider uppercase text-[#cbbbe4] font-semibold">
+                <span className="material-symbols-outlined text-[#2A835F] text-[16px]">functions</span>
+                <span className="font-mono text-xs tracking-wider uppercase text-[#8BBB92] font-semibold">
                   The Model
                 </span>
               </div>
-              <div className="rounded-lg bg-[#150947] border border-[#3D2C8D] p-3 text-center">
+              <div className="rounded-lg bg-[#092328] border border-[#12544F] p-3 text-center">
                 <code className="font-mono text-xs text-[#f8f6fc] block font-semibold">
                   U(t+1) = U(t) + (U(t) · k) − (U(t) · c)
                 </code>
@@ -285,14 +283,14 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
               <div className="flex items-center justify-between px-1 text-xs text-[#9d8bb8] font-mono">
                 <span>c = churn rate (fixed at 10%)</span>
                 <span
-                  className="material-symbols-outlined text-[#916BBF] text-[15px] cursor-help"
+                  className="material-symbols-outlined text-[#2A835F] text-[15px] cursor-help"
                   title="10% structural cohort attrition per 7-day cycle"
                 >
                   info
                 </span>
               </div>
-              <div className="mt-1 flex items-center gap-2 p-2.5 rounded-lg bg-[#150947] border border-[#3D2C8D]">
-                <span className="material-symbols-outlined text-[#C996CC] text-[18px]">hub</span>
+              <div className="mt-1 flex items-center gap-2 p-2.5 rounded-lg bg-[#092328] border border-[#12544F]">
+                <span className="material-symbols-outlined text-[#8BBB92] text-[18px]">hub</span>
                 <div className="flex flex-col min-w-0 font-mono text-xs">
                   <span className="text-[#f8f6fc] truncate font-semibold">
                     Recursive cohort diffusion
@@ -306,13 +304,13 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
           </div>
 
           {/* Quick Telemetry Insight Snippet */}
-          <div className="rounded-xl bg-[#24146a]/90 border border-[#3D2C8D] p-4 flex items-start gap-3.5">
-            <div className="p-2 rounded-lg bg-[#1C0C5B] border border-[#3D2C8D] flex items-center justify-center text-[#C996CC]">
+          <div className="rounded-xl bg-[#0e3d3c]/90 border border-[#12544F] p-4 flex items-start gap-3.5">
+            <div className="p-2 rounded-lg bg-[#092328] border border-[#12544F] flex items-center justify-center text-[#8BBB92]">
               <span className="material-symbols-outlined text-[18px]">bolt</span>
             </div>
             <div className="flex flex-col">
               <span className="text-sm font-semibold text-[#f8f6fc]">Tipping Threshold</span>
-              <p className="text-xs text-[#cbbbe4] mt-0.5 leading-relaxed">
+              <p className="text-xs text-[#8BBB92] mt-0.5 leading-relaxed">
                 At k ≥ 1.4, propagation bypasses community drag, achieving sustainable self-reinforcing modal density by Week 6.
               </p>
             </div>
@@ -322,16 +320,16 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
         {/* RIGHT COLUMN (70% / 7 cols) */}
         <div className="lg:col-span-7 flex flex-col gap-6">
           {/* Main Hero Card */}
-          <div className="relative rounded-xl bg-[#24146a]/90 border border-[#3D2C8D] p-6 md:p-8 flex flex-col gap-6">
+          <div className="relative rounded-xl bg-[#0e3d3c]/90 border border-[#12544F] p-6 md:p-8 flex flex-col gap-6">
             {/* Hero Card Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <div className="flex items-center gap-2.5">
-                  <span className="font-mono text-xs tracking-wider uppercase text-[#C996CC] font-semibold">
+                  <span className="font-mono text-xs tracking-wider uppercase text-[#8BBB92] font-semibold">
                     Projected Growth
                   </span>
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#1C0C5B] border border-[#3D2C8D] font-mono text-xs text-[#f8f6fc]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C996CC]"></span>
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#092328] border border-[#12544F] font-mono text-xs text-[#f8f6fc]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#8BBB92]"></span>
                     Realtime Model Run
                   </span>
                 </div>
@@ -341,12 +339,12 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
               </div>
 
               {/* Chart View Toggles */}
-              <div className="flex items-center p-1 rounded-lg bg-[#150947] border border-[#3D2C8D]">
+              <div className="flex items-center p-1 rounded-lg bg-[#092328] border border-[#12544F]">
                 <button
                   className={`px-3 py-1.5 rounded-md font-mono text-xs transition-colors cursor-pointer ${
                     chartView === 'cumulative'
-                      ? 'bg-[#3D2C8D] text-[#f8f6fc] border border-[#916BBF]/50 font-semibold'
-                      : 'text-[#cbbbe4] hover:text-white'
+                      ? 'bg-[#12544F] text-[#f8f6fc] border border-[#2A835F]/50 font-semibold'
+                      : 'text-[#8BBB92] hover:text-white'
                   }`}
                   id="tab-cumul"
                   onClick={() => setChartView('cumulative')}
@@ -356,8 +354,8 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
                 <button
                   className={`px-3 py-1.5 rounded-md font-mono text-xs transition-colors cursor-pointer ${
                     chartView === 'delta'
-                      ? 'bg-[#3D2C8D] text-[#f8f6fc] border border-[#916BBF]/50 font-semibold'
-                      : 'text-[#cbbbe4] hover:text-white'
+                      ? 'bg-[#12544F] text-[#f8f6fc] border border-[#2A835F]/50 font-semibold'
+                      : 'text-[#8BBB92] hover:text-white'
                   }`}
                   id="tab-delta"
                   onClick={() => setChartView('delta')}
@@ -368,28 +366,28 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
             </div>
 
             {/* THE HERO GROWTH CHART (SVG Canvas) */}
-            <div className="relative w-full h-80 md:h-96 rounded-lg bg-[#150947] border border-[#3D2C8D] p-4 flex flex-col justify-between overflow-hidden">
+            <div className="relative w-full h-80 md:h-96 rounded-lg bg-[#092328] border border-[#12544F] p-4 flex flex-col justify-between overflow-hidden">
               <svg className="w-full h-full overflow-visible" id="growth-svg" preserveAspectRatio="none" viewBox="0 0 760 300">
                 <defs>
-                  <linearGradient id="purpleIrisAreaGrad" x1="0%" x2="0%" y1="0%" y2="100%">
-                    <stop offset="0%" stopColor="#916BBF" stopOpacity="0.32"></stop>
-                    <stop offset="100%" stopColor="#1C0C5B" stopOpacity="0.01"></stop>
+                  <linearGradient id="greenAreaGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+                    <stop offset="0%" stopColor="#2A835F" stopOpacity="0.32"></stop>
+                    <stop offset="100%" stopColor="#092328" stopOpacity="0.01"></stop>
                   </linearGradient>
                 </defs>
 
                 {/* Background Gridlines */}
-                <line stroke="#3D2C8D" strokeDasharray="3 3" strokeOpacity="0.6" x1="50" x2="730" y1="30" y2="30"></line>
-                <line stroke="#3D2C8D" strokeDasharray="3 3" strokeOpacity="0.6" x1="50" x2="730" y1="90" y2="90"></line>
-                <line stroke="#3D2C8D" strokeDasharray="3 3" strokeOpacity="0.6" x1="50" x2="730" y1="150" y2="150"></line>
-                <line stroke="#3D2C8D" strokeDasharray="3 3" strokeOpacity="0.6" x1="50" x2="730" y1="210" y2="210"></line>
-                <line stroke="#3D2C8D" strokeOpacity="0.8" x1="50" x2="730" y1="270" y2="270"></line>
+                <line stroke="#12544F" strokeDasharray="3 3" strokeOpacity="0.6" x1="50" x2="730" y1="30" y2="30"></line>
+                <line stroke="#12544F" strokeDasharray="3 3" strokeOpacity="0.6" x1="50" x2="730" y1="90" y2="90"></line>
+                <line stroke="#12544F" strokeDasharray="3 3" strokeOpacity="0.6" x1="50" x2="730" y1="150" y2="150"></line>
+                <line stroke="#12544F" strokeDasharray="3 3" strokeOpacity="0.6" x1="50" x2="730" y1="210" y2="210"></line>
+                <line stroke="#12544F" strokeOpacity="0.8" x1="50" x2="730" y1="270" y2="270"></line>
 
-                <line stroke="#3D2C8D" strokeDasharray="3 3" strokeOpacity="0.6" x1="50" x2="50" y1="20" y2="270"></line>
-                <line stroke="#3D2C8D" strokeDasharray="3 3" strokeOpacity="0.6" x1="186" x2="186" y1="20" y2="270"></line>
-                <line stroke="#3D2C8D" strokeDasharray="3 3" strokeOpacity="0.6" x1="322" x2="322" y1="20" y2="270"></line>
-                <line stroke="#3D2C8D" strokeDasharray="3 3" strokeOpacity="0.6" x1="458" x2="458" y1="20" y2="270"></line>
-                <line stroke="#3D2C8D" strokeDasharray="3 3" strokeOpacity="0.6" x1="594" x2="594" y1="20" y2="270"></line>
-                <line stroke="#3D2C8D" strokeDasharray="3 3" strokeOpacity="0.6" x1="730" x2="730" y1="20" y2="270"></line>
+                <line stroke="#12544F" strokeDasharray="3 3" strokeOpacity="0.6" x1="50" x2="50" y1="20" y2="270"></line>
+                <line stroke="#12544F" strokeDasharray="3 3" strokeOpacity="0.6" x1="186" x2="186" y1="20" y2="270"></line>
+                <line stroke="#12544F" strokeDasharray="3 3" strokeOpacity="0.6" x1="322" x2="322" y1="20" y2="270"></line>
+                <line stroke="#12544F" strokeDasharray="3 3" strokeOpacity="0.6" x1="458" x2="458" y1="20" y2="270"></line>
+                <line stroke="#12544F" strokeDasharray="3 3" strokeOpacity="0.6" x1="594" x2="594" y1="20" y2="270"></line>
+                <line stroke="#12544F" strokeDasharray="3 3" strokeOpacity="0.6" x1="730" x2="730" y1="20" y2="270"></line>
 
                 {/* Y-Axis Labels */}
                 <text fill="#9d8bb8" fontFamily="JetBrains Mono" fontSize="10" textAnchor="end" x="40" y="34">
@@ -409,14 +407,14 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
                 </text>
 
                 {/* Curve Fill Area */}
-                <path d={areaD} fill="url(#purpleIrisAreaGrad)" id="growth-area" className="transition-all duration-500"></path>
+                <path d={areaD} fill="url(#greenAreaGrad)" id="growth-area" className="transition-all duration-500"></path>
 
                 {/* Smooth Bezier Stroke */}
                 <path
                   d={pathD}
                   fill="none"
                   id="growth-path"
-                  stroke="#C996CC"
+                  stroke="#8BBB92"
                   strokeLinecap="round"
                   strokeWidth="2.5"
                   className="transition-all duration-500"
@@ -428,11 +426,11 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
                   if (isLast) {
                     return (
                       <g key={idx}>
-                        <circle cx={pt.x} cy={pt.y} fill="#C996CC" fillOpacity="0.25" r="11"></circle>
-                        <circle cx={pt.x} cy={pt.y} fill="#150947" r="5" stroke="#C996CC" strokeWidth="2.5"></circle>
+                        <circle cx={pt.x} cy={pt.y} fill="#8BBB92" fillOpacity="0.25" r="11"></circle>
+                        <circle cx={pt.x} cy={pt.y} fill="#092328" r="5" stroke="#8BBB92" strokeWidth="2.5"></circle>
                         <g transform={`translate(${Math.max(50, pt.x - 105)}, ${Math.max(10, pt.y - 25)})`}>
-                          <rect fill="#150947" height="22" rx="4" stroke="#3D2C8D" strokeWidth="1" width="105"></rect>
-                          <circle cx="10" cy="11" fill="#C996CC" r="3"></circle>
+                          <rect fill="#092328" height="22" rx="4" stroke="#12544F" strokeWidth="1" width="105"></rect>
+                          <circle cx="10" cy="11" fill="#8BBB92" r="3"></circle>
                           <text fill="#f8f6fc" fontFamily="JetBrains Mono" fontSize="11" fontWeight="600" x="18" y="15">
                             {finalUsers} Users
                           </text>
@@ -445,9 +443,9 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
                       key={idx}
                       cx={pt.x}
                       cy={pt.y}
-                      fill="#24146a"
+                      fill="#0e3d3c"
                       r="3.5"
-                      stroke="#916BBF"
+                      stroke="#2A835F"
                       strokeWidth="1.5"
                       className="transition-all duration-300"
                     ></circle>
@@ -484,17 +482,17 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
             </div>
 
             {/* Ambient Divider */}
-            <div className="w-full h-px bg-[#3D2C8D]"></div>
+            <div className="w-full h-px bg-[#12544F]"></div>
 
             {/* 4-Column Metric Tiles Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {/* Tile 1: Active Users */}
-              <div className="rounded-xl bg-[#150947] border border-[#3D2C8D] p-4 flex flex-col justify-between">
+              <div className="group rounded-xl bg-[#092328] border border-[#12544F] hover:border-[#2A835F] p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:shadow-[#2A835F]/20 hover:-translate-y-1">
                 <div className="flex items-center justify-between mb-2">
                   <span className="font-mono text-xs uppercase tracking-wider text-[#9d8bb8]">
                     Active Users
                   </span>
-                  <span className="material-symbols-outlined text-[#916BBF] text-[16px]">
+                  <span className="material-symbols-outlined text-[#2A835F] text-[16px] group-hover:text-[#8BBB92] transition-colors">
                     group
                   </span>
                 </div>
@@ -504,19 +502,19 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
                 >
                   {finalUsers.toLocaleString()}
                 </div>
-                <div className="flex items-center gap-1 mt-2 font-mono text-xs text-[#C996CC]">
+                <div className="flex items-center gap-1 mt-2 font-mono text-xs text-[#8BBB92]">
                   <span className="material-symbols-outlined text-[14px]">trending_up</span>
                   <span>+{Math.round(((finalUsers - seedUsers) / seedUsers) * 100).toLocaleString()}% from seed</span>
                 </div>
               </div>
 
               {/* Tile 2: Rides Created */}
-              <div className="rounded-xl bg-[#150947] border border-[#3D2C8D] p-4 flex flex-col justify-between">
+              <div className="group rounded-xl bg-[#092328] border border-[#12544F] hover:border-[#2A835F] p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:shadow-[#2A835F]/20 hover:-translate-y-1">
                 <div className="flex items-center justify-between mb-2">
                   <span className="font-mono text-xs uppercase tracking-wider text-[#9d8bb8]">
                     Rides Created
                   </span>
-                  <span className="material-symbols-outlined text-[#916BBF] text-[16px]">
+                  <span className="material-symbols-outlined text-[#2A835F] text-[16px] group-hover:text-[#8BBB92] transition-colors">
                     route
                   </span>
                 </div>
@@ -526,19 +524,19 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
                 >
                   {ridesCreated.toLocaleString()}
                 </div>
-                <div className="flex items-center gap-1 mt-2 font-mono text-xs text-[#cbbbe4]">
+                <div className="flex items-center gap-1 mt-2 font-mono text-xs text-[#8BBB92]">
                   <span className="material-symbols-outlined text-[14px]">electric_car</span>
                   <span>1.54 rides / member</span>
                 </div>
               </div>
 
               {/* Tile 3: CO2 Saved */}
-              <div className="rounded-xl bg-[#150947] border border-[#3D2C8D] p-4 flex flex-col justify-between">
+              <div className="group rounded-xl bg-[#092328] border border-[#12544F] hover:border-[#2A835F] p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:shadow-[#2A835F]/20 hover:-translate-y-1">
                 <div className="flex items-center justify-between mb-2">
                   <span className="font-mono text-xs uppercase tracking-wider text-[#9d8bb8]">
                     CO₂ Saved
                   </span>
-                  <span className="material-symbols-outlined text-[#916BBF] text-[16px]">
+                  <span className="material-symbols-outlined text-[#2A835F] text-[16px] group-hover:text-[#8BBB92] transition-colors">
                     eco
                   </span>
                 </div>
@@ -548,30 +546,30 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
                 >
                   {co2Saved.toLocaleString()} kg
                 </div>
-                <div className="flex items-center gap-1 mt-2 font-mono text-xs text-[#cbbbe4]">
+                <div className="flex items-center gap-1 mt-2 font-mono text-xs text-[#8BBB92]">
                   <span className="material-symbols-outlined text-[14px]">compost</span>
                   <span>Offset eq. {Math.round(co2Saved / 21)} trees</span>
                 </div>
               </div>
 
               {/* Tile 4: BUTTERFLY EFFECT */}
-              <div className="rounded-xl bg-[#271577] border border-[#916BBF]/50 border-t-2 border-t-[#C996CC] p-4 flex flex-col justify-between">
+              <div className="group rounded-xl bg-[#12544F] border border-[#2A835F]/50 border-t-2 border-t-[#8BBB92] p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:shadow-[#8BBB92]/30 hover:-translate-y-1">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="font-mono text-xs uppercase tracking-wider text-[#C996CC] font-semibold flex items-center gap-1">
+                  <span className="font-mono text-xs uppercase tracking-wider text-[#8BBB92] font-semibold flex items-center gap-1">
                     Butterfly Effect
-                    <span className="material-symbols-outlined text-[#C996CC] text-[14px]">flutter</span>
+                    <span className="material-symbols-outlined text-[#8BBB92] text-[14px]">flutter</span>
                   </span>
-                  <span className="px-1.5 py-0.5 rounded-md bg-[#916BBF]/30 font-mono text-[11px] text-[#C996CC] font-bold">
+                  <span className="px-1.5 py-0.5 rounded-md bg-[#2A835F]/50 font-mono text-[11px] text-[#8BBB92] font-bold">
                     ALPHA
                   </span>
                 </div>
                 <div
-                  className="text-3xl font-extrabold text-[#C996CC] font-mono leading-none py-1"
+                  className="text-3xl font-extrabold text-[#8BBB92] font-mono leading-none py-1"
                   id="metric-factor"
                 >
                   {catalyticFactor}×
                 </div>
-                <div className="flex items-center gap-1 mt-2 font-mono text-xs text-[#C996CC]">
+                <div className="flex items-center gap-1 mt-2 font-mono text-xs text-[#8BBB92]">
                   <span className="material-symbols-outlined text-[14px]">all_inclusive</span>
                   <span>Catalytic amplification</span>
                 </div>
@@ -579,17 +577,17 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
             </div>
 
             {/* Evocative Community Anchor Quote */}
-            <div className="mt-2 text-center px-4 py-3 rounded-lg bg-[#150947] border border-[#3D2C8D]">
+            <div className="mt-2 text-center px-4 py-3 rounded-lg bg-[#092328] border border-[#12544F]">
               <p className="text-xs italic tracking-wide text-[#e2d7f0] font-serif">
-                “One connector can create the first ride. The first ride can create the community.”
+                "One connector can create the first ride. The first ride can create the community."
               </p>
             </div>
           </div>
 
           {/* Bottom Supporting Telemetry Stream */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="rounded-xl bg-[#24146a]/90 border border-[#3D2C8D] p-4 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[#1C0C5B] border border-[#3D2C8D] flex items-center justify-center text-[#C996CC]">
+            <div className="rounded-xl bg-[#0e3d3c]/90 border border-[#12544F] p-4 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-[#092328] border border-[#12544F] flex items-center justify-center text-[#8BBB92]">
                 <span className="material-symbols-outlined text-[20px]">share</span>
               </div>
               <div>
@@ -599,8 +597,8 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
                 </div>
               </div>
             </div>
-            <div className="rounded-xl bg-[#24146a]/90 border border-[#3D2C8D] p-4 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[#1C0C5B] border border-[#3D2C8D] flex items-center justify-center text-[#916BBF]">
+            <div className="rounded-xl bg-[#0e3d3c]/90 border border-[#12544F] p-4 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-[#092328] border border-[#12544F] flex items-center justify-center text-[#2A835F]">
                 <span className="material-symbols-outlined text-[20px]">repeat</span>
               </div>
               <div>
@@ -608,8 +606,8 @@ export const GrowthLoopButterflyEffect: React.FC<NavigationProps> = () => {
                 <div className="text-base font-bold font-mono text-[#f8f6fc]">89.4% post-ride</div>
               </div>
             </div>
-            <div className="rounded-xl bg-[#24146a]/90 border border-[#3D2C8D] p-4 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[#1C0C5B] border border-[#3D2C8D] flex items-center justify-center text-[#916BBF]">
+            <div className="rounded-xl bg-[#0e3d3c]/90 border border-[#12544F] p-4 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-[#092328] border border-[#12544F] flex items-center justify-center text-[#2A835F]">
                 <span className="material-symbols-outlined text-[20px]">speed</span>
               </div>
               <div>
