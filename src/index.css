@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #1C0C5B;
+  --color-surface-dim: #150849;
+  --color-surface-bright: #3D2C8D;
+  --color-surface-container-lowest: #120640;
+  --color-surface-container-low: #1c0c5b;
+  --color-surface-container: #24146a;
+  --color-surface-container-high: #2f1b82;
+  --color-surface-container-highest: #3D2C8D;
+  --color-surface-variant: #3D2C8D;
+  --color-on-surface: #f8f6fc;
+  --color-on-surface-variant: #cbbbe4;
+  --color-inverse-surface: #f8f6fc;
+  --color-inverse-on-surface: #1C0C5B;
+  --color-outline: #916BBF;
+  --color-outline-variant: #3D2C8D;
+  --color-surface-tint: #C996CC;
+  --color-primary: #C996CC;
+  --color-on-primary: #1C0C5B;
+  --color-primary-container: #916BBF;
+  --color-on-primary-container: #ffffff;
+  --color-inverse-primary: #916BBF;
+  --color-secondary: #916BBF;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #3D2C8D;
+  --color-on-secondary-container: #f8f6fc;
+  --color-tertiary: #cbbbe4;
+  --color-on-tertiary: #1C0C5B;
+  --color-tertiary-container: #3D2C8D;
+  --color-on-tertiary-container: #f8f6fc;
+  --color-error: #f87171;
+  --color-on-error: #450a0a;
+  --color-error-container: #7f1d1d;
+  --color-on-error-container: #fef2f2;
+  --color-background: #1C0C5B;
+  --color-on-background: #f8f6fc;
+
+  --font-body-lg: Inter, sans-serif;
+  --font-body-md: Inter, sans-serif;
+  --font-body-sm: Inter, sans-serif;
+  --font-headline-lg: Inter, sans-serif;
+  --font-headline-md: Inter, sans-serif;
+  --font-headline-sm: Inter, sans-serif;
+  --font-display: Inter, sans-serif;
+  --font-label-lg: "JetBrains Mono", monospace;
+  --font-label-md: "JetBrains Mono", monospace;
+  --font-label-sm: "JetBrains Mono", monospace;
+}
+
+@layer utilities {
+  .font-display { font-family: Inter, sans-serif; font-weight: 800; }
+  .font-headline-lg { font-family: Inter, sans-serif; font-weight: 700; }
+  .font-headline-md { font-family: Inter, sans-serif; font-weight: 600; }
+  .font-headline-sm { font-family: Inter, sans-serif; font-weight: 600; }
+  .font-body-lg { font-family: Inter, sans-serif; font-weight: 400; }
+  .font-body-md { font-family: Inter, sans-serif; font-weight: 400; }
+  .font-body-sm { font-family: Inter, sans-serif; font-weight: 400; }
+  .font-label-lg { font-family: "JetBrains Mono", monospace; font-weight: 600; }
+  .font-label-md { font-family: "JetBrains Mono", monospace; font-weight: 500; }
+  .font-label-sm { font-family: "JetBrains Mono", monospace; font-weight: 500; }
+
+  .text-display { font-size: 64px; line-height: 72px; letter-spacing: -0.03em; }
+  .text-headline-lg { font-size: 36px; line-height: 44px; letter-spacing: -0.02em; }
+  .text-headline-md { font-size: 24px; line-height: 32px; letter-spacing: -0.015em; }
+  .text-headline-sm { font-size: 20px; line-height: 28px; letter-spacing: -0.01em; }
+  .text-body-lg { font-size: 18px; line-height: 28px; }
+  .text-body-md { font-size: 15px; line-height: 24px; }
+  .text-body-sm { font-size: 13px; line-height: 20px; }
+  .text-label-lg { font-size: 14px; line-height: 20px; letter-spacing: 0.02em; }
+  .text-label-md { font-size: 12px; line-height: 16px; letter-spacing: 0.04em; }
+  .text-label-sm { font-size: 10px; line-height: 14px; letter-spacing: 0.06em; }
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+}
